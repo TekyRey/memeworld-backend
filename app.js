@@ -8,6 +8,8 @@ app.use(express.json());
 app.use(cors());
 
 const userRouter = require("./api/users/user.router");
+const postRouter = require("./api/posts/post.router");
+
 // const patientRouter = require("./api/patients/patient.router");
 // const logsRouter = require("./api/logs/logs.router");
 // const medicineRouter = require("./api/medicine/medicine.router");
@@ -21,6 +23,8 @@ const userRouter = require("./api/users/user.router");
 
 
 app.use("/api/users", userRouter);
+app.use("/api/posts", postRouter);
+
 // app.use("/api/patients", patientRouter);
 // app.use("/api/logs", logsRouter);
 // app.use("/api/medicine", medicineRouter);
