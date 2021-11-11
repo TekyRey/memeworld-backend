@@ -5,11 +5,9 @@ const {
     updateCategory,
     deleteCategory,
   } = require("./post.service");
-//   const { genSaltSync, hashSync, compareSync } = require("bcrypt");
-//   const { sign } = require("jsonwebtoken");
   const { insertCategories, updateCategories } = require("../../schema/postsSchema");
   module.exports = {
-    // create user controller
+    // create category controller
     createCategoryController: (req, res) => {
       const body = req.body;
       const validationResult = insertCategories.validate(body);
@@ -34,7 +32,7 @@ const {
       });
     },
   
-    //getUserById controller
+    //getCategoryById controller
     getCategoryByIdController: (req, res) => {
       const id = req.params.id;
       getCategoryById(id, (err, results) => {
@@ -52,20 +50,10 @@ const {
             // will not be returned anyways...
           });
         }
-        results[0].password = undefined; //should not return password
         return res.json({
           success: 1,
           data: results[0],
         });
-      });
-    },
-  
-    //verify token controller
-    verifyUserTokenController: (req, res) => {
-      const token = req.params.token;
-      return res.json({
-        success: 1,
-        data: "token was verified",
       });
     },
   
@@ -94,7 +82,7 @@ const {
       });
     },
   
-    // update user controller
+    // update category controller
     updateCategoryController: (req, res) => {
       const body = req.body;
       const validationResult = updateCategories.validate(body);
