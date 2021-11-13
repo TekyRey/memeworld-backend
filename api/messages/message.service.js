@@ -20,10 +20,10 @@ module.exports = {
     });
   },
 
-  getFollowerById: (id, callback) => {
+  getMessageById: (id, callback) => {
     pool.query(
-      `select * from messaging where user_id =?`,
-      [user_id],
+      `select * from messaging where id =?`,
+      [id],
       (error, results) => {
         if (error) {
           return callback(error);
@@ -46,7 +46,7 @@ module.exports = {
 
     // add where clause to query string(after removing the trailing comma)
     queryString = queryString.replace(/,\s*$/, "");
-    queryString = `${queryString} WHERE user_id = ? `;
+    queryString = `${queryString} WHERE id = ? `;
 
     queryValuesArray.push(data.id); // adds categoryid at the end
 
@@ -65,8 +65,8 @@ module.exports = {
 
   deleteFollower: (data, callback) => {
     pool.query(
-      `delete from messaging where user_id = ?`,
-      [data.user_id],
+      `delete from messaging where id = ?`,
+      [data.id],
       (err, results) => {
         if (err) {
           return callback(err);
