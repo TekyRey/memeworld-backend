@@ -24,7 +24,6 @@ const {
           return res.status(400).send(validationResult.error.details[0].message);
         }
     
-        
         createComment(body, (err, results) => {
           if (err) {
             console.log(err.sqlMessage);
