@@ -36,8 +36,8 @@ const {
     
       //getMessageById controller
       getMessageByIdController: (req, res) => {
-        const user_id = req.params.user_id;
-        getMessageById(user_id, (err, results) => {
+        const id = req.params.id;
+        getMessageById(id, (err, results) => {
           if (err) {
             console.log(err.sqlMessage);
             return res.status(500).json({
