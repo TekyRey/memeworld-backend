@@ -5,7 +5,7 @@ const {
     updateFollowerController,
     deleteFollowerController,
     
-  } = require("./post.controller");
+  } = require("./follower.controller");
   const router = require("express").Router();
   const { verifyToken } = require("../../auth/token_validation");
  
