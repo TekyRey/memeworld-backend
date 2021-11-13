@@ -84,7 +84,7 @@ const {
       },
     
       // update post controller
-      updatePostController: (req, res) => {
+      updateFollowerController: (req, res) => {
         const body = req.body;
         const validationResult = updateFollowers.validate(body);
         if (validationResult.error) {
@@ -93,7 +93,7 @@ const {
         }
        
     
-        updatePost(body, (err, results) => {
+        updateFollower(body, (err, results) => {
           if (err) {
             console.log(err.sqlMessage);
             return res.status(500).json({
