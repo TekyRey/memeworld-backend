@@ -5,7 +5,7 @@ const {
     updateMessage,
     deleteMessage,
     
-  } = require("./post.service");
+  } = require("./message.service");
   const {insertMessages, updateMessages} = require("../../schema/messagesSchema");
   module.exports = {
  
