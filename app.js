@@ -16,6 +16,8 @@ const followerRouter = require("./api/followers/follower.router");
 app.use("/api/users", userRouter);
 app.use("/api/posts", postRouter);
 app.use("/api/comments", commentRouter);
+app.use("/api/followers", followerRouter);
+
 
 
 app.listen(process.env.PORT, () => {
