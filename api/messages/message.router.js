@@ -3,9 +3,9 @@ const {
     getMessagesController,
     getMessageByIdController,
     updateMessageController,
-    deleteFollowerController,
+    deleteMessageController,
     
-  } = require("./follower.controller");
+  } = require("./message.controller");
   const router = require("express").Router();
   const { verifyToken } = require("../../auth/token_validation");
  
@@ -14,7 +14,7 @@ const {
    router.get("/", verifyToken(), getMessagesController,);
    router.get("/:id",verifyToken(),getMessageByIdController);
    router.patch("/",verifyToken(),updateMessageController);
-   router.delete("/",verifyToken(), deleteFollowerController);
+   router.delete("/",verifyToken(), deleteMessageController);
 
  
   module.exports = router;
