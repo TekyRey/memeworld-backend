@@ -11,6 +11,7 @@ const userRouter = require("./api/users/user.router");
 const postRouter = require("./api/posts/post.router");
 const commentRouter = require("./api/comments/comment.router");
 const followerRouter = require("./api/followers/follower.router");
+const messageRouter = require("./api/messages/message.router");
 
 app.use("/api/users", userRouter);
 app.use("/api/posts", postRouter);
