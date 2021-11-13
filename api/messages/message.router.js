@@ -1,6 +1,6 @@
 const {
     createMessageController,
-    getFollowersController,
+    getMessagesController,
     getFollowerByIdController,
     updateFollowerController,
     deleteFollowerController,
@@ -11,7 +11,7 @@ const {
  
  //posts routes
    router.post("/", verifyToken(), createMessageController);
-   router.get("/", verifyToken(), getFollowersController);
+   router.get("/", verifyToken(), getMessagesController,);
    router.get("/:id",verifyToken(),getFollowerByIdController);
    router.patch("/",verifyToken(),updateFollowerController);
    router.delete("/",verifyToken(), deleteFollowerController);
