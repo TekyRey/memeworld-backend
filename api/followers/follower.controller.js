@@ -34,10 +34,10 @@ const {
         });
       },
     
-      //getPostById controller
-      getPostByIdController: (req, res) => {
-        const id = req.params.id;
-        getPostById(id, (err, results) => {
+      //getFollowerById controller
+      getFollowerByIdController: (req, res) => {
+        const user_id = req.params.user_id;
+        getFolloweById(user_id, (err, results) => {
           if (err) {
             console.log(err.sqlMessage);
             return res.status(500).json({
