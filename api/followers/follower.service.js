@@ -33,7 +33,7 @@ module.exports = {
     );
   },
 
-  updatePost: (data, callback) => {
+  updateFollower: (data, callback) => {
     // get the query keys present in the data object
     const queryKeysArray = Object.keys(data);
 
@@ -46,7 +46,7 @@ module.exports = {
 
     // add where clause to query string(after removing the trailing comma)
     queryString = queryString.replace(/,\s*$/, "");
-    queryString = `${queryString} WHERE id = ? `;
+    queryString = `${queryString} WHERE user_id = ? `;
 
     queryValuesArray.push(data.id); // adds categoryid at the end
 
