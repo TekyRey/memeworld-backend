@@ -63,7 +63,7 @@ module.exports = {
     );
   },
 
-  deleteFollower: (data, callback) => {
+  deleteMessage: (data, callback) => {
     pool.query(
       `delete from messaging where id = ?`,
       [data.id],
