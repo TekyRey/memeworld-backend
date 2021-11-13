@@ -11,7 +11,7 @@ module.exports = {
     });
   },
 
-  getmessaging: (callback) => {
+  getMessages: (callback) => {
     pool.query(`select * from messaging`, [], (error, results) => {
       if (error) {
         return callback(error);
