@@ -14,10 +14,22 @@ const {
     getPostLikesController,
     updatePostLikeController,
     deletePostLikeController,
+    createPostFavoriteController,
+    getPostFavoriteByUserIdController,
+    getPostFavoritesController,
+    updatePostFavoriteController,
+    deletePostFavoriteController,
   } = require("./post.controller");
   const router = require("express").Router();
   const { verifyToken } = require("../../auth/token_validation");
   
+   //post likes routes
+   router.post("/favorites", verifyToken(), createPostFavoriteController);
+   router.get("/favorites", verifyToken(), getPostFavoritesController);
+   router.get("/favorites:id",verifyToken(),getPostFavoriteByUserIdController);
+   router.patch("/favorites",verifyToken(),updatePostFavoriteController);
+   router.delete("/favorites",verifyToken(), deletePostFavoriteController);
+
 
  
  //posts routes
@@ -35,9 +47,9 @@ const {
   router.delete("/categories",verifyToken(), deleteCategoryController);
 
    //post likes routes
-   router.post("/postlikes", verifyToken(), createPostLikeController);
-   router.get("/postlikes", verifyToken(), getPostLikeByUserIdController);
-   router.get("/postlikes:id",verifyToken(),getPostLikesController);
+   router.post("/likes", verifyToken(), createPostLikeController);
+   router.get("/postlikes", verifyToken(), getPostLikesController);
+   router.get("/postlikes:id",verifyToken(),getPostLikeByUserIdController);
    router.patch("/postlikes",verifyToken(),updatePostLikeController);
    router.delete("/postlikes",verifyToken(), deletePostLikeController);
 
