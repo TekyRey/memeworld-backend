@@ -16,7 +16,6 @@ app.use("/api/posts", postRouter);
 app.use("/api/comments", commentRouter);
 
 
-
 app.listen(process.env.PORT, () => {
   console.log("server has started at port " + process.env.PORT);
 });

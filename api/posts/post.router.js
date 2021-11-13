@@ -48,10 +48,10 @@ const {
 
    //post likes routes
    router.post("/likes", verifyToken(), createPostLikeController);
-   router.get("/postlikes", verifyToken(), getPostLikesController);
-   router.get("/postlikes:id",verifyToken(),getPostLikeByUserIdController);
-   router.patch("/postlikes",verifyToken(),updatePostLikeController);
-   router.delete("/postlikes",verifyToken(), deletePostLikeController);
+   router.get("/likes", verifyToken(), getPostLikesController);
+   router.get("/likes:id",verifyToken(),getPostLikeByUserIdController);
+   router.patch("/likes",verifyToken(),updatePostLikeController);
+   router.delete("/likes",verifyToken(), deletePostLikeController);
 
  
   module.exports = router;
