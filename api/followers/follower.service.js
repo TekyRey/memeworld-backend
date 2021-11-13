@@ -11,8 +11,8 @@ module.exports = {
     });
   },
 
-  getPosts: (callback) => {
-    pool.query(`select * from posts`, [], (error, results) => {
+  getFollowers: (callback) => {
+    pool.query(`select * from followers`, [], (error, results) => {
       if (error) {
         return callback(error);
       }
