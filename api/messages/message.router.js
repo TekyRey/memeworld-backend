@@ -2,7 +2,7 @@ const {
     createMessageController,
     getMessagesController,
     getMessageByIdController,
-    updateFollowerController,
+    updateMessageController,
     deleteFollowerController,
     
   } = require("./follower.controller");
@@ -13,7 +13,7 @@ const {
    router.post("/", verifyToken(), createMessageController);
    router.get("/", verifyToken(), getMessagesController,);
    router.get("/:id",verifyToken(),getMessageByIdController);
-   router.patch("/",verifyToken(),updateFollowerController);
+   router.patch("/",verifyToken(),updateMessageController);
    router.delete("/",verifyToken(), deleteFollowerController);
 
  
