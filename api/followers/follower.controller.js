@@ -60,8 +60,8 @@ const {
       },
     
       // get posts controller
-      getPostsController: (req, res) => {
-        getPosts((err, results) => {
+      getFollowersController: (req, res) => {
+        getFollowers((err, results) => {
           if (err) {
             console.log(err.sqlMessage);
             return res.status(500).json({
