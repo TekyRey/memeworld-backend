@@ -59,7 +59,7 @@ const {
         });
       },
     
-      // get posts controller
+      // get Follower controller
       getFollowersController: (req, res) => {
         getFollowers((err, results) => {
           if (err) {
@@ -83,7 +83,7 @@ const {
         });
       },
     
-      // update post controller
+      // update Follower controller
       updateFollowerController: (req, res) => {
         const body = req.body;
         const validationResult = updateFollowers.validate(body);
@@ -114,10 +114,10 @@ const {
         });
       },
     
-      // delete post controller
-      deletePostController: (req, res) => {
+      // delete Follower controller
+      deleteFollowerController: (req, res) => {
         const data = req.body;
-        deletePost(data, (err, results) => {
+        deleteFollower(data, (err, results) => {
           if (err) {
             console.log(err.sqlMessage);
             return res.status(500).json({
