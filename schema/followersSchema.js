@@ -7,6 +7,13 @@ module.exports = {
     favorites: Joi.number().allow(null),
   }),
 
+  updateFollowers: Joi.object({
+    user_id: Joi.number().required(),
+    follower_id: Joi.number().allow(null),
+    blocked: Joi.number().allow(null),
+    favorites: Joi.number().allow(null),
+  }),
+
   
   
 };
