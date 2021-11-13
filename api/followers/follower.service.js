@@ -51,7 +51,7 @@ module.exports = {
     queryValuesArray.push(data.id); // adds categoryid at the end
 
     pool.query(
-      `UPDATE posts SET ${queryString}`,
+      `UPDATE followers SET ${queryString}`,
       queryValuesArray,
       (error, results) => {
         if (error) {
@@ -63,10 +63,10 @@ module.exports = {
     );
   },
 
-  deletePost: (data, callback) => {
+  deleteFollower: (data, callback) => {
     pool.query(
-      `delete from posts where id = ?`,
-      [data.id],
+      `delete from followers where user_id = ?`,
+      [data.user_id],
       (err, results) => {
         if (err) {
           return callback(err);
