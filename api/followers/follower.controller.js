@@ -37,7 +37,7 @@ const {
       //getFollowerById controller
       getFollowerByIdController: (req, res) => {
         const user_id = req.params.user_id;
-        getFolloweById(user_id, (err, results) => {
+        getFollowerById(user_id, (err, results) => {
           if (err) {
             console.log(err.sqlMessage);
             return res.status(500).json({
@@ -139,8 +139,5 @@ const {
       },
 
 
-  
-    
-    
   };
   
