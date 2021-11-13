@@ -20,10 +20,10 @@ module.exports = {
     });
   },
 
-  getPostById: (id, callback) => {
+  getFollowerById: (id, callback) => {
     pool.query(
-      `select * from posts where id =?`,
-      [id],
+      `select * from followers where user_id =?`,
+      [user_id],
       (error, results) => {
         if (error) {
           return callback(error);
