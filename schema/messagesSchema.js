@@ -9,11 +9,14 @@ module.exports = {
     privacy: Joi.string().required(),
   }),
 
-  updateFollowers: Joi.object({
-    user_id: Joi.number().required(),
-    follower_id: Joi.number().allow(null),
-    blocked: Joi.number().allow(null),
-    favorites: Joi.number().allow(null),
+  updateMessages: Joi.object({
+    id: Joi.number().required(),
+    user_id: Joi.number().allow(null),
+    sender_id: Joi.number().allow(null),
+    receiver_id: Joi.number().allow(null),
+    message: Joi.string().allow(null),
+    date: Joi.date().allow(null),
+    privacy: Joi.string().allow(null),
   }),
 
   
