@@ -78,7 +78,6 @@ module.exports = {
   },
 
    //Comments likes service
-
    createCommentLike: (data, callback) => {
     pool.query(`insert into comment_likes SET ?`, data, (error, results) => {
       if (error) {
@@ -99,7 +98,7 @@ module.exports = {
 
   getCommentLikeByUserId: (user_id, callback) => {
     pool.query(
-      `select * from Comment_likes where user_id =?`,
+      `select * from comment_likes where user_id =?`,
       [user_id],
       (error, results) => {
         if (error) {
@@ -128,7 +127,7 @@ module.exports = {
     queryValuesArray.push(data.id); // adds categoryid at the end
 
     pool.query(
-      `UPDATE Comment_likes SET ${queryString}`,
+      `UPDATE comment_likes SET ${queryString}`,
       queryValuesArray,
       (error, results) => {
         if (error) {
@@ -142,7 +141,7 @@ module.exports = {
 
   deleteCommentLike: (data, callback) => {
     pool.query(
-      `delete from Comment_likes where user_id = ?`,
+      `delete from comment_likes where user_id = ?`,
       [data.user_id],
       (err, results) => {
         if (err) {
