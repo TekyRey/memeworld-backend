@@ -33,7 +33,7 @@ module.exports = {
     );
   },
 
-  updateFollower: (data, callback) => {
+  updateMessage: (data, callback) => {
     // get the query keys present in the data object
     const queryKeysArray = Object.keys(data);
 
