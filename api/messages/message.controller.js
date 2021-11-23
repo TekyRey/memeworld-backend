@@ -17,8 +17,7 @@ const {
           // 400 bad request
           return res.status(400).send(validationResult.error.details[0].message);
         }
-    
-        
+
         createMessage(body, (err, results) => {
           if (err) {
             console.log(err.sqlMessage);
@@ -115,7 +114,7 @@ const {
       },
     
       // delete Follower controller
-      deleteMessage,Controller: (req, res) => {
+      deleteMessageController: (req, res) => {
         const data = req.body;
         deleteMessage,(data, (err, results) => {
           if (err) {

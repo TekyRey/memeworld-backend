@@ -5,7 +5,7 @@ const {
     updateFollower,
     deleteFollower,
     
-  } = require("./post.service");
+  } = require("./follower.service");
   const {insertFollowers, updateFollowers} = require("../../schema/followersSchema");
   module.exports = {
  

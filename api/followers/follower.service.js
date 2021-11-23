@@ -20,7 +20,7 @@ module.exports = {
     });
   },
 
-  getFollowerById: (id, callback) => {
+  getFollowerById: (user_id, callback) => {
     pool.query(
       `select * from followers where user_id =?`,
       [user_id],
@@ -48,7 +48,7 @@ module.exports = {
     queryString = queryString.replace(/,\s*$/, "");
     queryString = `${queryString} WHERE user_id = ? `;
 
-    queryValuesArray.push(data.id); // adds categoryid at the end
+    queryValuesArray.push(data.user_id); // adds categoryid at the end
 
     pool.query(
       `UPDATE followers SET ${queryString}`,

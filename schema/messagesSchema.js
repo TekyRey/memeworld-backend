@@ -1,7 +1,6 @@
 const Joi = require("joi");
 module.exports = {
   insertMessages: Joi.object({
-    user_id: Joi.number().required(),
     sender_id: Joi.number().required(),
     receiver_id: Joi.number().required(),
     message: Joi.string().required(),
@@ -11,7 +10,6 @@ module.exports = {
 
   updateMessages: Joi.object({
     id: Joi.number().required(),
-    user_id: Joi.number().allow(null),
     sender_id: Joi.number().allow(null),
     receiver_id: Joi.number().allow(null),
     message: Joi.string().allow(null),

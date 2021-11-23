@@ -11,7 +11,7 @@ const {
     deletePost,
     createPostLike,
     getPostLikes,
-    updatePostLike,
+    updatePostLike, 
     getPostLikeByUserId,
     deletePostLike,
     createPostFavorite,

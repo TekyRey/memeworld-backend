@@ -7,9 +7,8 @@ const {
     createCommentLikeController,
     getcommentLikeByUserIdController,
     getcommentLikesController,
-    getcommentLikesController,
     deleteCommentLikeController,
-  } = require("./comment.controller");
+  } = require("./comment.contoller");
   const router = require("express").Router();
   const { verifyToken } = require("../../auth/token_validation");
   
