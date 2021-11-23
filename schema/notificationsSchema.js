@@ -14,6 +14,5 @@ module.exports = {
     date: Joi.date().optional(),
     type: Joi.string().optional(),
   }),
-
   
 };
