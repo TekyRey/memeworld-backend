@@ -164,7 +164,7 @@ const {
         if (validationResult.error) {
           // 400 bad request
           return res.status(400).send(validationResult.error.details[0].message);
-        }
+        } 
     
         
         createPost(body, (err, results) => {

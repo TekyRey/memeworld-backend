@@ -6,7 +6,7 @@ const {
     deleteUserController,
     loginController,
     verifyUserTokenController,
-  } = require("./user.controller");
+} = require("./user.controller");
   const router = require("express").Router();
   const { verifyToken } = require("../../auth/token_validation");
   

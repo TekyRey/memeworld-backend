@@ -19,7 +19,24 @@ const {
     getPostFavoritesController,
     updatePostFavoriteController,
     deletePostFavoriteController,
-  } = require("./post.controller");
+} = require("./post.controller");
+   const multer = require("multer");
+  const path = require("path");
+  const DIR = "./public/media";
+  
+  let storage = multer.diskStorage({
+    destination: function (req, file, callback) {
+      callback(null, DIR);
+    },
+    filename: function (req, file, cb) {
+      const filenem =
+        file.fieldname + "-" + Date.now() + path.extname(file.originalname);
+
+      cb(null, filenem);
+    },
+  });
+
+  let upload = multer({ storage: storage });
   const router = require("express").Router();
   const { verifyToken } = require("../../auth/token_validation");
   
@@ -33,14 +50,14 @@ const {
 
  
  //posts routes
-   router.post("/", verifyToken(), createPostController);
+   router.post("/", verifyToken(),  upload.single("profile"), createPostController);
    router.get("/", verifyToken(), getPostsController);
    router.get("/:id",verifyToken(),getPostByIdController);
    router.patch("/",verifyToken(),updatePostController);
    router.delete("/",verifyToken(), deletePostController);
 
   //categories routes
-  router.post("/categories", verifyToken(), createCategoryController);
+  router.post("/categories", verifyToken(),  createCategoryController);
   router.get("/categories", verifyToken(), getCategoriesController);
   router.get("categories/:id",verifyToken(),getCategoryByIdController);
   router.patch("/categories",verifyToken(),updateCategoryController);
